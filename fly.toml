@@ -7,33 +7,33 @@ app = "blue-surf-3148"
 primary_region = "arn"
 
 [deploy]
-  release_command = "npm run build"
+release_command = "npm run build"
 
 [processes]
-  app = "node app.js"
+app = "node app.js"
 
 [build]
-  [build.args]
-    NODE_VERSION = "16.20.2"
+[build.args]
+  NODE_VERSION = "16.20.2"
 
 [http_service]
-  internal_port = 3000
-  force_https = true
-  auto_stop_machines = true
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ["app"]
+internal_port = 3000
+force_https = true
+auto_stop_machines = true
+auto_start_machines = true
+min_machines_running = 0
+processes = ["app"]
 
-   [[services.tcp_checks]]
-    grace_period = "1s"
-    interval = "15s"
-    restart_limit = 0
-    timeout = "2s"
+[[services.tcp_checks]]
+grace_period = "1s"
+interval = "15s"
+restart_limit = 0
+timeout = "2s"
 
-   [[services.http_checks]]
-    interval = "15s"        
-    timeout = "5s"          
-    grace_period = "30s"    
-    protocol = "http"       
-    path = "/health"        
-    port = 5000           
+[[services.http_checks]]
+interval = "15s"
+timeout = "5s"
+grace_period = "30s"
+protocol = "http"
+path = "/health"
+port = 5000
