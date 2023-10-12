@@ -31,9 +31,9 @@ primary_region = "arn"
     timeout = "2s"
 
    [[services.http_checks]]
-    interval = "15s"        # The interval at which the check will be performed
-    timeout = "5s"          # The timeout of each check
-    grace_period = "30s"    # The amount of time to wait before starting checks after deployment
-    protocol = "http"       # The protocol to use (http or https)
-    path = "/health"        # The endpoint to check
+    interval = "15s"        
+    timeout = "5s"          
+    grace_period = "30s"    
+    protocol = "http"       
+    path = "/health"        
     port = 5000           
