@@ -30,10 +30,4 @@ interval = "15s"
 restart_limit = 0
 timeout = "2s"
 
-[[services.http_checks]]
-interval = "15s"
-timeout = "5s"
-grace_period = "30s"
-protocol = "http"
-path = "/health"
-port = 5000
+
