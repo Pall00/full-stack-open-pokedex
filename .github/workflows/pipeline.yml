@@ -31,10 +31,10 @@ jobs:
             start: npm run start-prod
             wait-on: http://localhost:5000
 
-        - name: Commit messages
+        - name: commits
           env:
-            COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-          run: echo "$COMMIT_MESSAGES"
+             COMMITS: ${{ toJson(github.event.commits) }}
+          run: echo "$COMMITS"
 
         - name: Deployment success
           uses: rjstone/discord-webhook-notify@v1
